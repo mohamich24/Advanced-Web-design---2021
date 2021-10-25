@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+<!-- Head Section is all nonvisible elements-->
+<head>
+
+    <!-- All inpage style goes here-->
+    <style>
+        :root {
+            --mainbg: #d8d8d8;
+            --headercolor: #ffffff;
+            --navcolor:#001d3d;
+            --navtext: #ffffff;
+            --footercolor: #4a4b4a;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: var(--headercolor);
+            padding: 1rem;
+        }
+        nav {
+            background: var(--navcolor);
+            color: var(--navtext);
+            padding: 1rem;
+        }
+        footer {
+            background: var(--footercolor);
+            color: var(--navtext);
+            padding: 1rem; 
+            min-height: 12vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: var(--mainbg);
+            min-height: 70vh;
+        }
+        .row {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        .row-item {
+            padding: 1rem;
+            background: white;
+        }
+        .row-item input, button {
+            display: block;
+            margin: 1rem;
+            font-size: 1.25rem;
+            padding: .5rem;
+        }
+        button {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        .display {
+            min-height: 12vh;
+            width: 90%;
+            margin: auto;
+            border: 1px solid lightgrey;
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+
+
+    </style>
+
+    <!-- All LINK tags go here-->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TITLE</title>
+
+</head>
+
+<!-- Body Section is all visible elements-->
+<body>
+
+    <header>
+        Header
+    </header>
+    <nav>
+        Nav
+    </nav>
+    <!-- Main page body here. Use container or DIV -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="row-item">
+                <div class="display">
+                    <p id="dbox">
+                        000
+                    </p>
+                </div>
+                <form name="myform">
+                    <input type="number" name="n1" placeholder="Enter a number">
+                    <input type="number" name="n2" placeholder="Enter another number">
+                </form>
+                <button name="calc" onclick="calculateAnswer()">Calculate</button>
+                <button name="clear" onclick="clearDisplay()">Clear</button>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <footer>
+        Footer
+    </footer>
+
+
+
+
+
+
+
+    <!-- JavaScript Goes Here -->
+
+    <script>
+
+        function clearDisplay() {
+            document.getElementById('dbox').innerHTML = '0';
+        }
+
+        function calculateAnswer() {
+            var n1 = Number(document.forms["myform"]["n1"].value);
+            var n2 = Number(document.forms["myform"]["n2"].value);
+            answer = n1 + n2;
+
+            document.getElementById('dbox').innerHTML = answer;
+        }
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
