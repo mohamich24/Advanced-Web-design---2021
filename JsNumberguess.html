@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<!-- Head Section is all nonvisible elements-->
+<head>
+
+    <!-- All inpage style goes here-->
+    <style>
+:root {
+            --mainbg: #d8d8d8;
+            --headercolor: #ffffff;
+            --navcolor:#001d3d;
+            --navtext: #ffffff;
+            --footercolor: #4a4b4a;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: var(--headercolor);
+            padding: 1rem;
+        }
+        nav {
+            background: var(--navcolor);
+            color: var(--navtext);
+            padding: 1rem;
+        }
+        footer {
+            background: var(--footercolor);
+            color: var(--navtext);
+            padding: 1rem; 
+            min-height: 12vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: var(--mainbg);
+            min-height: 70vh;
+        }
+        /* classes for JS */
+        .hide {
+           display: none; 
+        }
+        .show {
+            display: block;
+        }
+
+
+
+    </style>
+
+    <!-- All LINK tags go here-->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JsNumberGuess</title>
+
+</head>
+
+<!-- Body Section is all visible elements-->
+<body>
+
+    <header>
+        <h1>JS Number Guess Program</h1>
+    </header>
+    <nav>
+        Nav
+    </nav>
+    <!-- Main page body here. Use container or DIV -->
+
+    <div class="container">
+        <h2>Welcome to the number guess game</h2>
+
+        <div class="displaywindo">
+
+            <div class="messageWindow">
+                <p id="msg">
+                    ---
+                </p>
+
+            </div><!--- End msg window-->
+
+            <div class="inputPane">
+                <form name="userInputs">
+
+                    <input type="text" id="userName" placeholder="Enter Name Here">
+                    <input type="text" id="guess" name="guess" placeholder="Enter Guess Here">
+
+                </form>
+
+                <button id="processName" onclick="processName()">Continue</button>
+                <button id="processGuess" onclick="processGuess()">ENter Your Guess</button>
+            
+            
+            </div><!-- ENd input pane-->
+
+
+        </div><!-- End Display Window-->
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <footer>
+        Footer
+    </footer>
+
+
+
+
+
+
+
+    <!-- JavaScript Goes Here -->
+
+
+
+
+
+
+</body>
+</html>
