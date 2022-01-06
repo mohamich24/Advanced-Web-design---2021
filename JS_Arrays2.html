@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<!-- Head Section is all nonvisible elements-->
+<head>
+
+    <!-- All inpage style goes here-->
+    <style>
+        :root {
+            --mainbg: #d8d8d8;
+            --headercolor: #ffffff;
+            --navcolor:#001d3d;
+            --navtext: #ffffff;
+            --footercolor: #4a4b4a;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: var(--headercolor);
+            padding: 1rem;
+        }
+        nav {
+            background: var(--navcolor);
+            color: var(--navtext);
+            padding: 1rem;
+        }
+        footer {
+            background: var(--footercolor);
+            color: var(--navtext);
+            padding: 1rem; 
+            min-height: 12vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: var(--mainbg);
+            min-height: 70vh;
+        }
+        #infoBox {
+            display: flex;
+        }
+        .box {
+            flex-basis: 100%;
+            margin: 1rem;
+            min-height:30vh;
+            border-radius: 12px;
+            background: var(--navtext);
+            overflow:hidden;
+        }
+        .box h3 {
+            background: var(--navcolor);
+            color: var(--navtext);
+            padding: 1.5rem;
+        }
+
+
+
+    </style>
+
+    <!-- All LINK tags go here-->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Arrays 1</title>
+
+</head>
+
+<!-- Body Section is all visible elements-->
+<body>
+
+    <header>
+        Header
+    </header>
+    <nav>
+        Nav
+    </nav>
+    <!-- Main page body here. Use container or DIV -->
+    <div class="container">
+
+        <button onclick="generateBoxes()">Make Boxes</button>
+        <form>
+            <input type="text" placeholder="type value to add">
+        </form>
+        <button onclick="addArrayValue()">Add Value</button>
+        <div id="infoBox">
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <footer>
+        Footer
+    </footer>
+
+
+
+
+
+
+
+    <!-- JavaScript Goes Here -->
+
+    <script>
+        const infoBox = document.getElementById("infoBox");
+        var infoBoxValue = "";
+        var boxTitles = [
+            ["Box 1", "Box 1 para text"],
+            ["Box 2", "Box 2 para text"],
+            ["Box 3", "Box 3 para text"],
+            ["Box 4", "Box 4 para text"]
+        ];
+
+        infoBoxValue = "<h1>Purple</h1>";
+        infoBox.innerHTML = infoBoxValue
+
+
+
+        function generateBoxes() {
+
+            infoBoxValue = "";
+
+            boxTitles.forEach(function(b){
+                infoBoxValue += "<div class='box'><h3>" + b[0] + "</h3>";
+                infoBoxValue += "<p>" + b[1] + "</p></div>"
+            });
+
+            infoBox.innerHTML = infoBoxValue;
+        }
+
+
+        function addArrayValue() {
+            var formInput = document.forms[0].elements[0];
+            var itemToAdd = [formInput.value, "Added via JS"];
+
+           // alert(formInput.value);
+           boxTitles.push(itemToAdd);
+           alert(formInput.value + " added successfully");
+           formInput.value = "";
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
